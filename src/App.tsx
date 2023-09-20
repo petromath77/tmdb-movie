@@ -1,15 +1,23 @@
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Pages from './components/Pages/Pages';
+import { ThemeProvider } from 'styled-components';
+import { useAppSelector } from './hooks/storeHooks';
+import { blackTheme, lightTheme } from './styles/theme';
+import GlobalStyles from './styles/global';
 
 
 function App() {
+  const { darkTheme } = useAppSelector(state => state);
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Pages />
-      </BrowserRouter>
+      <ThemeProvider theme={darkTheme ? blackTheme : lightTheme}>
+        <BrowserRouter>
+          <Header />
+          <Pages />
+        </BrowserRouter>
+        <GlobalStyles/>
+      </ThemeProvider>
     </>
   );
 }

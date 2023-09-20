@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../../elements/Container'
 import styled from 'styled-components'
 import { NavLink, Outlet } from 'react-router-dom'
+import IconTheme from '../../elements/IconTheme'
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ const Header = () => {
                     <NavLink className='navLink' to='/upcoming'>Upcoming</NavLink>
                     <NavLink className='navLink' to='/favorites'>Favorites</NavLink>
                 </MenuNav>
+                <IconTheme />
             </HeaderWrapper>
         </Container>
         <Outlet />

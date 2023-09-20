@@ -1,12 +1,11 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, withTheme } from 'styled-components';
+import { ThemeProps } from './theme';
 
-export interface DefaultTheme {
-    background: string,
-    color: string,
-    navHover: string
-  }
+type GlobalThemeProps = {
+  theme: ThemeProps;
+ };
 
-export default createGlobalStyle<{ theme: DefaultTheme }>`
+ const globalStyle = createGlobalStyle`
 
   * {
     margin:0;
@@ -15,8 +14,8 @@ export default createGlobalStyle<{ theme: DefaultTheme }>`
   }
 
   body {
-    background-color: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.color};
+    background-color: ${({ theme }: GlobalThemeProps) => theme.background};
+    color: ${({ theme }: GlobalThemeProps) => theme.color};
     font-size: 16px;
     line-height: 1.2;
     transition: all 0.3s linear;
@@ -28,28 +27,30 @@ export default createGlobalStyle<{ theme: DefaultTheme }>`
   }
 
   button {
-    background-color: ${({ theme }) => theme.background};
+    background-color: ${({ theme }: GlobalThemeProps) => theme.background};
   }
 
   a {
-    color: ${({ theme }) => theme.color};
+    color: ${({ theme }: GlobalThemeProps) => theme.color};
     text-decoration: none;
   }
 
   .navLink {
-    color: ${({ theme }) => theme.color};
+    color: ${({ theme }: GlobalThemeProps) => theme.color};
     font-weight: 700;
 
     &:hover {
-      color: ${({ theme }) => theme.navHover};
+      color: ${({ theme }: GlobalThemeProps) => theme.navHover};
     }
   }
   
   .active {
-    color: ${({ theme }) => theme.navHover};
+    color: ${({ theme }: GlobalThemeProps) => theme.navHover};
   }
 
   section {
     padding: 40px 0;
   }
 `
+
+export default withTheme(globalStyle);
