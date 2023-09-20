@@ -21,6 +21,12 @@ type GlobalThemeProps = {
     transition: all 0.3s linear;
   }
 
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
   a, 
   button {
     transition: all 0.3s linear;

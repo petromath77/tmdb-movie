@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { useAppSelector } from './hooks/storeHooks';
 import { blackTheme, lightTheme } from './styles/theme';
 import GlobalStyles from './styles/global';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
         <BrowserRouter>
           <Header />
           <Pages />
+          <Footer />
         </BrowserRouter>
-        <GlobalStyles/>
+        <GlobalStyles />
       </ThemeProvider>
     </>
   );
