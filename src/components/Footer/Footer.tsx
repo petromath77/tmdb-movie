@@ -7,7 +7,7 @@ const Footer = () => {
     <FooterSection>
         <Container>
             <FooterWrapper>
-                <h1>wetrtreter</h1>
+                <div>&#169; 2023 All rights reserved</div>
             </FooterWrapper>
         </Container>
     </FooterSection>
