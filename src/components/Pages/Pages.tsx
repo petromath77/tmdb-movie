@@ -1,9 +1,8 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './Home'
-import Detail from './Detail'
-import Favorites from './Favorites'
-import Upcoming from './Upcoming'
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Detail from './Detail';
+import Favorites from './Favorites';
+import Upcoming from './Upcoming';
 
 
 

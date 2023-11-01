@@ -22,7 +22,7 @@ const Header = () => {
   )
 }
 
-const HeaderSection = styled.section`
+const HeaderSection = styled.header`
     background-color: ${({theme}) => theme.headerColor};
     padding: 20px 0;
 `
