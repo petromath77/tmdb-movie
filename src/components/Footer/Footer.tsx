@@ -1,6 +1,5 @@
-import React from 'react'
-import Container from '../../elements/Container'
-import styled from 'styled-components'
+import Container from '../../elements/Container';
+import styled from 'styled-components';
 
 const Footer = () => {
   return (
@@ -14,7 +13,7 @@ const Footer = () => {
   )
 }
 
-const FooterSection = styled.section`
+const FooterSection = styled.footer`
     background-color: ${({theme}) => theme.headerColor};
     padding: 20px 0;
     margin-top: auto;

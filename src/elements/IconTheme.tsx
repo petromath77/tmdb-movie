@@ -1,6 +1,6 @@
-import { BsSun, BsFillMoonFill } from 'react-icons/bs'
-import styled from 'styled-components'
-import { useAppDispatch, useAppSelector } from '../hooks/storeHooks'
+import { BsSun, BsFillMoonFill } from 'react-icons/bs';
+import styled from 'styled-components';
+import { useAppDispatch, useAppSelector } from '../hooks/storeHooks';
 import { toggleTheme } from '../features/themeSlice';
 
 const IconTheme = () => {
