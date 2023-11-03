@@ -5,7 +5,7 @@ import Container from '../../elements/Container';
 import MovieCard from './MovieCard';
 
 const MovieList: React.FC<MovieState> = (props) => {
-    const { data, loading, error, movieDetails } = props;
+    const { data, loading, error } = props;
 
     console.log(data?.results);
   return (
@@ -18,7 +18,7 @@ const MovieList: React.FC<MovieState> = (props) => {
                     data?.results.map(result => {
                     const { id, title, overview, poster_path, release_date, vote_average } = result;
                     return <MovieCard key={id} title={title}
-                    overview={overview} poster_path={poster_path} release_date={release_date} vote_average={vote_average} id={id} detail={movieDetails} isFavorite={false}/>
+                    overview={overview} poster_path={poster_path} release_date={release_date} vote_average={vote_average} id={id} isFavorite={false}/>
                     })
                 )}
             </MovieListItems>

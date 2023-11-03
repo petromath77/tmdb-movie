@@ -6,7 +6,6 @@ import { getMovies } from '../../features/movieSlice';
 
 const Home: React.FC = () => {
   const { data, loading, error } = useAppSelector(state => state.movies);
-  const detail: boolean = false;
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const Home: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <MovieList data={data} loading={loading} error={error} movieDetails={detail} />
+    <MovieList data={data} loading={loading} error={error}/>
   )
 }
 

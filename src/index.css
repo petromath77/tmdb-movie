@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
+:root {
+  --black: #1d1f28;
+  --white: #fafafa;
+  --active: #8d8d8d;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -11,3 +17,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.black {
+  fill: var(--black);
+  color: var(--black);
+}
+
+.white {
+  fill: var(--white);
+  color: var(--white);
+}
+
