@@ -11,10 +11,6 @@ const Detail:React.FC = () => {
   const { data, loading, error } = useAppSelector(state => state.detail);
   const dispatch = useAppDispatch();
 
-  console.log(data);
-
-  //const detail: boolean = true;
-
   useEffect(() => {
     dispatch(getDetails(movieId));
   }, [dispatch, movieId]);
