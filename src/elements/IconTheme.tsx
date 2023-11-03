@@ -9,8 +9,8 @@ const IconTheme = () => {
 
   return (
     <Icon onClick={() => dispatch(toggleTheme())}>
-      {darkTheme && <BsSun/>}
-      {!darkTheme && <BsFillMoonFill/>}
+      {darkTheme && <BsSun className='white'/>}
+      {!darkTheme && <BsFillMoonFill className='black'/>}
     </Icon>
   )
 }
