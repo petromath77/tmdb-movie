@@ -46,6 +46,4 @@ export const movieSlice = createSlice({
     },
 });
 
-//export const getSelectedMovie = (state: any) => state.movies.movieDetails;
-
 export default movieSlice.reducer;

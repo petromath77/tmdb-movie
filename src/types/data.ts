@@ -10,6 +10,10 @@ export interface MovieDetailState {
     data: null | any
 }
 
+export interface MovieFavoriteState {
+  data: null | any[]
+}
+
 export interface MovieItem {
     id: number;
     title: string;
@@ -17,13 +21,8 @@ export interface MovieItem {
     poster_path: string;
     release_date: string;
     vote_average: number;
-    isFavorite: boolean;
   }
 
-  export interface MovieItemDetail {
-    title: string;
-    overview: string;
-    poster_path: string;
-    release_date: string;
-    vote_average: number;
+  export interface MovieItemDetail extends  MovieItem {
+    isFavorite: boolean;
   }

@@ -57,6 +57,12 @@ type GlobalThemeProps = {
   section {
     padding: 80px 0;
   }
+
+  .loading {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 `
 
 export default withTheme(globalStyle);
