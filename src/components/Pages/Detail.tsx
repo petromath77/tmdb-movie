@@ -18,9 +18,9 @@ const Detail:React.FC = () => {
   return (
     <DetailItem>
       <Container>
-        { loading === true && (<h3>Loading...</h3>)}
-        {error && (<h3>Server Error: {error}</h3>)}
-        {data && <MovieCardDetail title={data?.title} overview={data?.overview} poster_path={data?.poster_path} release_date={data?.release_date} vote_average={data?.vote_average}/>}
+        { loading && (<h3 className='loading'>Loading...</h3>)}
+        {error && (<h3 className='loading'>Server Error: {error}</h3>)}
+        {data && !loading && <MovieCardDetail id={data?.id} title={data?.title} overview={data?.overview} poster_path={data?.poster_path} release_date={data?.release_date} vote_average={data?.vote_average} isFavorite={data?.isFavorite}/>}
       </Container>
     </DetailItem>
   )

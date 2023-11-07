@@ -12,13 +12,13 @@ const MovieList: React.FC<MovieState> = (props) => {
     <MovieSection>
         <Container>
             <MovieListItems>
-                { loading === true && (<h3>Loading...</h3>)}
-                {error && (<h3>Server Error: {error}</h3>)}
-                {data && (
+                {loading && <h3 className='loading'>Loading...</h3>}
+                {error && (<h3 className='loading'>Server Error: {error}</h3>)}
+                {data && !loading && (
                     data?.results.map(result => {
                     const { id, title, overview, poster_path, release_date, vote_average } = result;
                     return <MovieCard key={id} title={title}
-                    overview={overview} poster_path={poster_path} release_date={release_date} vote_average={vote_average} id={id} isFavorite={false}/>
+                    overview={overview} poster_path={poster_path} release_date={release_date} vote_average={vote_average} id={id}/>
                     })
                 )}
             </MovieListItems>
@@ -27,8 +27,7 @@ const MovieList: React.FC<MovieState> = (props) => {
   )
 }
 
-const MovieSection = styled.section`
-`
+const MovieSection = styled.section``
 
 const MovieListItems = styled.div`
     display: flex;

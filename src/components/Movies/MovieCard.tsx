@@ -1,20 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import { MovieItem } from '../../types/data';
-import { useAppDispatch } from "../../hooks/storeHooks";
-// import { addFavorite } from "../../features/favoriteSlice";
-import { MdFavorite } from 'react-icons/md';
 import { AiFillStar } from 'react-icons/ai';
 
 const MovieCard: React.FC<MovieItem> = (props: any) => {
-  const {id, title, poster_path, vote_average, isFavorite} = props;
-
-  const dispatch = useAppDispatch();
-
-  // const favoriteHandler = (e: any) => {
-  //   e.preventDefault();
-  //   dispatch(addFavorite(props));
-  // }
+  const {id, title, poster_path, vote_average} = props;
 
   return (
     <>
@@ -30,8 +20,6 @@ const MovieCard: React.FC<MovieItem> = (props: any) => {
           </MovieCardImage>
           <MovieCardContent>
             <h4>{title}</h4>
-            {/* { !isFavorite ? <AddFavorite onClick={(e) => favoriteHandler(e)}><MdFavorite /></AddFavorite> : '' } */}
-            <AddFavorite><MdFavorite /></AddFavorite>
           </MovieCardContent>
         </Link>
       </MovieCardItem>
@@ -104,28 +92,6 @@ const MovieCardContent = styled.div`
   align-items: flex-start;
   padding: 20px;
   column-gap: 20px;
-`
-
-const AddFavorite  = styled.button`
-  display: flex;
-  padding: 3px 7px;
-  border-radius: 5px;
-  border: none;
-  cursor:  pointer;
-
-  &:hover {
-    transform: translateY(-3px);
-
-    svg {
-      fill: #8f4444;
-    }
-  }
-}
-  svg {
-    font-size: 20px;
-    fill: #707070;
-    transition: all .3s ease;
-  }
 `
 
 export default MovieCard

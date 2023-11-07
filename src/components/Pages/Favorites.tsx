@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useAppSelector } from '../../hooks/storeHooks';
+import MovieListDetail from '../Movies/MovieListDetail';
 
 const Favorites = () => {
+  const data = useAppSelector(state => state.favorite);
+
   return (
-    <div>Favorites</div>
+    <MovieListDetail data={data}/>
   )
 }
 
