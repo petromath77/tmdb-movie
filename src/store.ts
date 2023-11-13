@@ -4,6 +4,7 @@ import movieReducer from './features/movieSlice';
 import detailReducer from './features/detailSlice';
 import upcomingReducer from './features/upcomingSlice';
 import favoriteReducer from './features/favoriteSlice';
+import userReducer from './features/userSlice';
 
 export const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
         movies: movieReducer,
         detail: detailReducer,
         upcoming: upcomingReducer,
-        favorite: favoriteReducer
+        favorite: favoriteReducer,
+        users: userReducer,
     }
 })
 

@@ -54,6 +54,15 @@ type GlobalThemeProps = {
     color: ${({ theme }: GlobalThemeProps) => theme.navHover};
   }
 
+  .link {
+    color: ${({ theme }: GlobalThemeProps) => theme.color};
+    text-decoration: underline;
+
+    &:hover {
+      color: ${({ theme }: GlobalThemeProps) => theme.navHover};
+    }
+  }
+
   section {
     padding: 80px 0;
   }
@@ -62,6 +71,10 @@ type GlobalThemeProps = {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+  }
+
+  .header {
+    margin-bottom: 30px;
   }
 `
 
