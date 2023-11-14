@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 type FormProps = {
-    title: string | null,
-    handleSubmit:  (email: any, password: any) => void
+    title: string,
+    handleSubmit:  (email: string, password: string) => void
   };
 
-const Form = (props: FormProps) => {
+const Form:React.FC<FormProps> = ({title, handleSubmit}) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
   return (
@@ -22,8 +22,8 @@ const Form = (props: FormProps) => {
             onChange={(e) => setPass(e.target.value)}
             placeholder="password"
         />
-        <button onClick={() => props.handleSubmit(email, pass)}>
-            {props.title}
+        <button onClick={() => handleSubmit(email, pass)}>
+            {title}
         </button>
     </div>
   )

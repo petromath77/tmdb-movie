@@ -2,25 +2,24 @@ import { Link } from 'react-router-dom';
 import Container from '../../elements/Container';
 import styled from 'styled-components';
 import { useAppDispatch } from '../../hooks/storeHooks';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Form from '../Form/Form';
 import { setUser } from '../../features/userSlice';
 
-
-const Login:React.FC = () => {
+const Register:React.FC = () => {
   const dispatch = useAppDispatch();
 
-  const handleLogin = (email: string, password: string) => {
+  const handleRegister = (email: string, password: string) => {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-    .then(({user}) => {
-      console.log(user);
-      dispatch(setUser({
-        email: user.email,
-        id: user.uid,
-        token: user.refreshToken
-      }))
-    })
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(({user}) => {
+        console.log(user);
+        dispatch(setUser({
+          email: user.email,
+          id: user.uid,
+          token: user.refreshToken
+        }))
+      })
       .catch(console.error);
   }
 
@@ -28,9 +27,9 @@ const Login:React.FC = () => {
     <LoginRegister>
         <Container>
             <LoginRegisterWrapper>
-                <h2 className='header'>Login</h2>
-                <Form title="Sign In" handleSubmit={handleLogin} />
-                <p>Or <Link className='link' to='/register'>Register</Link></p>
+                <h2 className='header'>Register</h2>
+                <Form title="Sign Up" handleSubmit={handleRegister}/>
+                <p>Already Have An Account <Link className='link' to='/login'>Login</Link></p>
             </LoginRegisterWrapper>
         </Container>
     </LoginRegister>
@@ -48,4 +47,4 @@ const LoginRegisterWrapper = styled.div`
     border-radius: 10px;
 `;
 
-export default Login
+export default Register

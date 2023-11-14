@@ -68,6 +68,7 @@ type GlobalThemeProps = {
   }
 
   .loading {
+    display: block;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
