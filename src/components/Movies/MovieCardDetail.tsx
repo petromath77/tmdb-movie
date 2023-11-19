@@ -7,6 +7,7 @@ import { MovieItemDetail } from '../../types/data';
 
 const MovieCardDetail: React.FC<MovieItemDetail> = (props) => {
     const {title, overview, poster_path, release_date, vote_average, isFavorite} = props;
+    const user = localStorage.getItem('user');
 
     const dispatch = useAppDispatch();
 
@@ -25,7 +26,7 @@ const MovieCardDetail: React.FC<MovieItemDetail> = (props) => {
             <h4>Release Date: {release_date}</h4>
             <h4>Rate: {vote_average}</h4>
             <MovieCardDesc className="overview">{overview}</MovieCardDesc>
-            { !isFavorite ? <AddFavorite onClick={(e) => favoriteHandler(e)}>Add To Favorite<MdFavorite /></AddFavorite> : '' }
+            { !isFavorite && user ? <AddFavorite onClick={(e) => favoriteHandler(e)}>Add To Favorite<MdFavorite /></AddFavorite> : '' }
         </MovieCardContent>
     </MovieCardItemDetail>
   )

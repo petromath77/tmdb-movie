@@ -33,6 +33,18 @@ type GlobalThemeProps = {
 
   button {
     background-color: ${({ theme }: GlobalThemeProps) => theme.background};
+    color: ${({ theme }: GlobalThemeProps) => theme.color};
+    padding: 7px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: ${({ theme }: GlobalThemeProps) => theme.color};
+    cursor: pointer;
+    font-weight: 700;
+
+    &:hover {
+      background-color: #858585;
+    }
   }
 
   a {

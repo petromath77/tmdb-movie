@@ -5,6 +5,9 @@ import { NavLink, Outlet } from 'react-router-dom'
 import IconTheme from '../../elements/IconTheme'
 
 const Header = () => {
+    const user = localStorage.getItem('user');
+
+    console.log(user);
   return (
     <HeaderSection>
         <Container>
@@ -12,7 +15,7 @@ const Header = () => {
                 <MenuNav>
                     <NavLink className='navLink' to='/'>Movies</NavLink>
                     <NavLink className='navLink' to='/upcoming'>Upcoming</NavLink>
-                    <NavLink className='navLink' to='/favorites'>Favorites</NavLink>
+                    {user && <NavLink className='navLink' to='/favorites'>Favorites</NavLink>}
                 </MenuNav>
                 <IconTheme />
             </HeaderWrapper>

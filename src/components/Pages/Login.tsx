@@ -30,7 +30,7 @@ const Login:React.FC = () => {
             <LoginRegisterWrapper>
                 <h2 className='header'>Login</h2>
                 <Form title="Sign In" handleSubmit={handleLogin} />
-                <p>Or <Link className='link' to='/register'>Register</Link></p>
+                <LoginRegisterLine>Or <Link className='link' to='/register'>Register</Link></LoginRegisterLine>
             </LoginRegisterWrapper>
         </Container>
     </LoginRegister>
@@ -41,11 +41,15 @@ const LoginRegister = styled.section``;
 
 const LoginRegisterWrapper = styled.div`
     background-color: ${({theme}) => theme.headerColor};
-    max-width: 480px;
+    max-width: 360px;
     padding: 20px;
     text-align: center;
     margin: 0 auto;
     border-radius: 10px;
 `;
+
+const LoginRegisterLine = styled.p`
+  margin: 15px 0;
+`
 
 export default Login

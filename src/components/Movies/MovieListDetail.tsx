@@ -7,7 +7,6 @@ import MovieCard from './MovieCard';
 const MovieListDetail: React.FC<MovieFavoriteState> = (props) => {
     const { data } = props;
 
-    console.log(data?.length);
     return (
         <MovieSection>
             <Container>
