@@ -7,10 +7,12 @@ import Form from '../Form/Form';
 import { setUser } from '../../features/userSlice';
 import { useState } from 'react';
 import Error from '../../UI/Error';
+import { useNavigate } from 'react-router-dom';
 
 const Register:React.FC = () => {
   const dispatch = useAppDispatch();
   const [validation, setValidation] = useState('');
+  const navigate = useNavigate();
 
   const handleRegister = (email: string, password: string) => {
     const auth = getAuth();
@@ -21,6 +23,7 @@ const Register:React.FC = () => {
           id: user.uid,
           token: user.refreshToken
         }));
+        navigate('/');
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {

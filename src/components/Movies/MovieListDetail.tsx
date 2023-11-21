@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { MovieFavoriteState } from '../../types/data';
 import Container from '../../elements/Container';
