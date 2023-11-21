@@ -26,3 +26,9 @@ export interface MovieItem {
   export interface MovieItemDetail extends  MovieItem {
     isFavorite: boolean;
   }
+
+  export interface UserState {
+    email: string | null;
+    token: number | null;
+    id: number | null;
+  }

@@ -7,6 +7,7 @@ import { MovieItemDetail } from '../../types/data';
 
 const MovieCardDetail: React.FC<MovieItemDetail> = (props) => {
     const {title, overview, poster_path, release_date, vote_average, isFavorite} = props;
+    const user = localStorage.getItem('user');
 
     const dispatch = useAppDispatch();
 
@@ -21,11 +22,11 @@ const MovieCardDetail: React.FC<MovieItemDetail> = (props) => {
             alt={title} loading='lazy'/>
         </MovieCardImage>
         <MovieCardContent className="content">
-            <h4>{title}</h4>
+            <h2>{title}</h2>
             <h4>Release Date: {release_date}</h4>
             <h4>Rate: {vote_average}</h4>
             <MovieCardDesc className="overview">{overview}</MovieCardDesc>
-            { !isFavorite ? <AddFavorite onClick={(e) => favoriteHandler(e)}><MdFavorite /></AddFavorite> : '' }
+            { !isFavorite && user ? <AddFavorite onClick={(e) => favoriteHandler(e)}>Add To Favorite<MdFavorite /></AddFavorite> : '' }
         </MovieCardContent>
     </MovieCardItemDetail>
   )
@@ -38,9 +39,18 @@ const MovieCardItemDetail  = styled.div`
   overflow: hidden;
   box-shadow: 0px 10px 13px -7px #000000, 0px 0px 10px 4px rgba(0,0,0,0);
 
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+
   .image-wrap {
     width: 50%;
     height: auto;
+
+    @media (max-width: 640px) {
+      width: 100%;
+      height: 400px;
+    }
   }
 
   .content {
@@ -48,6 +58,10 @@ const MovieCardItemDetail  = styled.div`
     justify-content: flex-start;
     row-gap: 30px;
     width: 50%;
+
+    @media (max-width: 640px) {
+      width: 100%;
+    }
   }
 
   .overview {
@@ -75,21 +89,26 @@ const MovieCardContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
+  padding: 40px 20px;
   column-gap: 20px;
 `
 
 const MovieCardDesc = styled.div`
     height: 98px;
     overflow: hidden;
+    letter-spacing: 1px;
 `
 
 const AddFavorite  = styled.button`
   display: flex;
-  padding: 3px 7px;
+  align-items: center;
+  padding: 7px 10px;
   border-radius: 5px;
   border: none;
-  cursor:  pointer;
+  cursor: pointer;
+  color: ${({theme}) => theme.color};
+  font-weight: 800;
+  gap: 10px;
 
   &:hover {
     transform: translateY(-3px);

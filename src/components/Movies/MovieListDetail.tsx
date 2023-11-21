@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { MovieFavoriteState } from '../../types/data';
 import Container from '../../elements/Container';
@@ -7,7 +6,6 @@ import MovieCard from './MovieCard';
 const MovieListDetail: React.FC<MovieFavoriteState> = (props) => {
     const { data } = props;
 
-    console.log(data?.length);
     return (
         <MovieSection>
             <Container>

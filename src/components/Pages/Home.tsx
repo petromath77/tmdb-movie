@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect } from "react";
 import MovieList from '../Movies/MovieList';
 import { useAppSelector, useAppDispatch } from '../../hooks/storeHooks';

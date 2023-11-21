@@ -1,8 +1,7 @@
-import React from 'react';
 import { useAppSelector } from '../../hooks/storeHooks';
 import MovieListDetail from '../Movies/MovieListDetail';
 
-const Favorites = () => {
+const Favorites: React.FC = () => {
   const data = useAppSelector(state => state.favorite);
 
   return (

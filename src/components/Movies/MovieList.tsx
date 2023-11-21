@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { MovieState } from '../../types/data';
 import Container from '../../elements/Container';
@@ -11,9 +10,9 @@ const MovieList: React.FC<MovieState> = (props) => {
   return (
     <MovieSection>
         <Container>
+            {loading && <h3 className='loading'>Loading...</h3>}
+            {error && (<h3 className='loading'>Server Error: {error}</h3>)}
             <MovieListItems>
-                {loading && <h3 className='loading'>Loading...</h3>}
-                {error && (<h3 className='loading'>Server Error: {error}</h3>)}
                 {data && !loading && (
                     data?.results.map(result => {
                     const { id, title, overview, poster_path, release_date, vote_average } = result;

@@ -1,10 +1,9 @@
-import React from 'react';
 import { useEffect } from "react";
 import MovieList from '../Movies/MovieList';
 import { useAppSelector, useAppDispatch } from '../../hooks/storeHooks';
 import { getUpcoming } from '../../features/upcomingSlice';
 
-const Upcoming = () => {
+const Upcoming:React.FC = () => {
   const { data, loading, error } = useAppSelector(state => state.upcoming);
   const dispatch = useAppDispatch();
 
